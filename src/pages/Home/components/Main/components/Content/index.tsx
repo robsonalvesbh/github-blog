@@ -2,15 +2,11 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 import { CardIssue } from './components/CardIssue'
-import { InputSearch, PublishesApi } from './components/InputSearch'
+import { InputSearch } from './components/InputSearch'
 import { ContentContainer } from './styles'
 
 export function Content() {
-  const [issues, SetIssuesData] = useState([])
-
-  const objeto = {
-    publishes: issues,
-  } as PublishesApi
+  const [issues, setIssuesData] = useState([])
 
   useEffect(() => {
     getIssuesFromGithubApi()
@@ -22,13 +18,13 @@ export function Content() {
     )
 
     const apiData = response.data.items
-    SetIssuesData(apiData)
+    setIssuesData(apiData)
   }
   console.log(issues)
   return (
     <ContentContainer>
       <InputSearch publishes={issues} />
-      {/* <CardIssue publishes={objeto} /> */}
+      <CardIssue publishes={issues} />
     </ContentContainer>
   )
 }

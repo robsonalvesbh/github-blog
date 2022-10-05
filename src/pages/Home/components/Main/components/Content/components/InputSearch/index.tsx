@@ -1,6 +1,6 @@
 import { ContainerSearch } from './styles'
 
-export interface PublishesApi {
+interface PublishesApi {
   publishes: []
 }
 
