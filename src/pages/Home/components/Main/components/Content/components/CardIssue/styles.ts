@@ -22,7 +22,15 @@ export const CardWrapper = styled.article`
   margin-right: 2rem;
   margin-bottom: 2rem;
 
-  position: relative;
+  a {
+    color: ${(props) => props.theme['base-text']};
+    display: block;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
 
   h2 {
     color: ${(props) => props.theme['base-title']};
@@ -31,6 +39,8 @@ export const CardWrapper = styled.article`
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 160%;
+
+    width: 280px;
   }
 
   span {
@@ -39,10 +49,7 @@ export const CardWrapper = styled.article`
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 160%;
-
-    position: absolute;
-    right: 8px;
-    top: 38px;
+    flex-grow: 2;
 
     color: ${(props) => props.theme['base-span']};
   }
@@ -55,5 +62,7 @@ export const CardWrapper = styled.article`
     line-height: 160%;
 
     margin-top: 1.25rem;
+
+    flex-grow: 1;
   }
 `
